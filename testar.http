@@ -1,0 +1,47 @@
+#   CLIENTES NO BANCO WALLET JA POPULADOS
+#--------------------------------------------------
+#   0126d054-b251-11ef-a024-0242ac140003	Manoel
+#   10077c97-b251-11ef-a024-0242ac140003	Rafael
+#   f1cae221-b255-11ef-a024-0242ac140003	Gabriel
+#   f24f4f30-b255-11ef-a024-0242ac140003	Marcos
+#   f2c87e65-b255-11ef-a024-0242ac140003	Ana
+#   f3407bb5-b255-11ef-a024-0242ac140003	Diana
+#--------------------------------------------------
+
+#   CONTAS NO BANCO WALLET JA POPULADOS
+#--------------------------------------------------
+#   856f52ff-b256-11ef-a024-0242ac140003	0126d054-b251-11ef-a024-0242ac140003	58404
+#   b9e9f067-b256-11ef-a024-0242ac140003	10077c97-b251-11ef-a024-0242ac140003	1258
+#   c1988cdc-b256-11ef-a024-0242ac140003	f1cae221-b255-11ef-a024-0242ac140003	6587
+#   c89d3290-b256-11ef-a024-0242ac140003	f24f4f30-b255-11ef-a024-0242ac140003	95871
+#   d01b733a-b256-11ef-a024-0242ac140003	f2c87e65-b255-11ef-a024-0242ac140003	597
+#   d833c315-b256-11ef-a024-0242ac140003	f3407bb5-b255-11ef-a024-0242ac140003	6934
+#--------------------------------------------------
+
+# ADICIONADO NA CONTA DE RAFAEL 1000 VINDO DA CONTA DE MANOEL
+POST http://localhost:8080/transactions HTTP/1.1
+Content-Type: application/json
+
+{
+    "account_id_from": "856f52ff-b256-11ef-a024-0242ac140003",
+    "account_id_to": "b9e9f067-b256-11ef-a024-0242ac140003",
+    "amount": 1000
+}
+
+###
+# Abra duas abas no navegador com o endereço http://localhost:3003/balances
+# Mais só de o refresh na segunda aba para ver a diferença
+# ou execute os itens abaixo
+###
+
+# BALANCO DA CONTA DE MANOEL
+GET http://localhost:3003/balances/856f52ff-b256-11ef-a024-0242ac140003 HTTP/1.1
+Content-Type: application/json
+
+###
+
+# BALANCO DA CONTA DE RAFAEL
+GET http://localhost:3003/balances/b9e9f067-b256-11ef-a024-0242ac140003 HTTP/1.1
+Content-Type: application/json
+
+
